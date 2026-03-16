@@ -102,16 +102,18 @@ export default function ResultPage() {
     void generateShareLink();
   }
 
-  function openSocialShare(kind: "x" | "facebook" | "linkedin") {
+  function openSocialShare(kind: "x" | "instagram" | "linkedin") {
     if (!shareLink || !result) return;
     const text = encodeURIComponent(`CultureLens: ${result.reference}`);
     const url = encodeURIComponent(shareLink);
-    const targets = {
-      x: `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=${url}`,
-      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
-    };
-    window.open(targets[kind], "_blank", "noopener,noreferrer");
+    if (kind === "x") {
+      window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, "_blank", "noopener,noreferrer");
+    } else if (kind === "linkedin") {
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, "_blank", "noopener,noreferrer");
+    } else if (kind === "instagram") {
+      // Instagram does not support direct web sharing, so show a message or fallback
+      alert("Instagram sharing is not supported directly. Please copy the link and share manually.");
+    }
   }
 
   async function downloadCardPng() {
