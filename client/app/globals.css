@@ -1,0 +1,261 @@
+@import "tailwindcss";
+
+:root {
+  --background: rgb(0, 10, 20);
+  --foreground: #eff6ff;
+  --panel: #071523;
+  --surface-elevated: #0d2033;
+  --surface-muted: #12293d;
+  --ink-soft: #8ea8c3;
+  --accent: #69e2ff;
+  --accent-2: #72b8ff;
+  --danger-bg: #33121e;
+  --danger-fg: #ffb4c7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: rgb(0, 10, 20);
+    --foreground: #f4f9ff;
+    --panel: #06121f;
+    --surface-elevated: #0b1b2c;
+    --surface-muted: #11253a;
+    --ink-soft: #91a9c4;
+    --accent: #7ae7ff;
+    --accent-2: #7dc0ff;
+    --danger-bg: #3c1221;
+    --danger-fg: #ffb8cb;
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-panel: var(--panel);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-muted: var(--surface-muted);
+  --color-ink-soft: var(--ink-soft);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+body {
+  background:
+    radial-gradient(circle at 10% 12%, color-mix(in srgb, var(--accent) 18%, transparent) 0%, transparent 32%),
+    radial-gradient(circle at 86% 16%, color-mix(in srgb, var(--accent-2) 10%, transparent) 0%, transparent 28%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-elevated) 32%, transparent) 0%, transparent 28%),
+    var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  min-height: 100vh;
+  color-scheme: dark;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(color-mix(in srgb, var(--foreground) 4%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--foreground) 4%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle at center, black 28%, transparent 88%);
+  opacity: 0.2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), sans-serif;
+}
+
+* {
+  border-color: color-mix(in srgb, var(--ink-soft) 20%, transparent);
+}
+
+:where(a, button, input, textarea, select):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  transform: translateY(-160%);
+  z-index: 100;
+  border-radius: 12px;
+  background: var(--foreground);
+  color: var(--background);
+  padding: 0.45rem 0.85rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+}
+
+.surface-input {
+  background: var(--surface-elevated);
+  color: var(--foreground);
+  border-color: color-mix(in srgb, var(--ink-soft) 30%, transparent);
+  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--foreground) 6%, transparent);
+}
+
+.surface-chip {
+  background: var(--surface-muted);
+  color: var(--foreground);
+  border-color: color-mix(in srgb, var(--ink-soft) 22%, transparent);
+}
+
+.status-error {
+  background: var(--danger-bg);
+  color: var(--danger-fg);
+}
+
+.site-frame {
+  position: relative;
+}
+
+.site-frame::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--background) 12%, transparent), transparent 24%, transparent 76%, color-mix(in srgb, var(--background) 18%, transparent));
+}
+
+.shell-panel {
+  background: color-mix(in srgb, var(--panel) 88%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ink-soft) 18%, transparent);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(16px);
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-danger,
+.btn-ghost,
+.tag-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  transition: transform 0.18s ease, opacity 0.18s ease, background-color 0.18s ease, border-color 0.18s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-danger:hover,
+.btn-ghost:hover,
+.tag-chip:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent) 92%, white 8%), color-mix(in srgb, var(--accent-2) 16%, var(--accent)));
+  color: #03121d;
+  box-shadow: 0 12px 30px color-mix(in srgb, var(--accent) 26%, transparent);
+}
+
+.btn-secondary {
+  background: var(--surface-elevated);
+  color: var(--foreground);
+  border: 1px solid color-mix(in srgb, var(--ink-soft) 22%, transparent);
+}
+
+.btn-danger {
+  background: color-mix(in srgb, var(--danger-bg) 78%, #7a1f3a 22%);
+  color: #fff0f5;
+}
+
+.btn-ghost {
+  color: var(--foreground);
+  border: 1px solid color-mix(in srgb, var(--ink-soft) 20%, transparent);
+  background: color-mix(in srgb, var(--surface-muted) 68%, transparent);
+}
+
+.tag-chip {
+  background: color-mix(in srgb, var(--surface-muted) 84%, transparent);
+  color: var(--foreground);
+  border: 1px solid color-mix(in srgb, var(--ink-soft) 18%, transparent);
+}
+
+.brand-mark {
+  display: inline-flex;
+  height: 2.2rem;
+  width: 2.2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--accent) 84%, white 16%), color-mix(in srgb, var(--accent-2) 28%, var(--accent)));
+  color: #03121d;
+  font-weight: 800;
+  box-shadow: 0 10px 26px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.bg-white {
+  background-color: var(--surface-elevated) !important;
+  color: var(--foreground) !important;
+}
+
+.bg-\[\#efe7d8\],
+.bg-\[\#f6f2ea\] {
+  background-color: var(--surface-muted) !important;
+  color: var(--foreground) !important;
+}
+
+.hover\:bg-\[\#e6dcc9\]:hover,
+.hover\:bg-\[\#efe7d8\]:hover,
+.hover\:bg-\[\#f5f0e8\]:hover {
+  background-color: color-mix(in srgb, var(--surface-muted) 84%, var(--foreground) 16%) !important;
+}
+
+.bg-\[\#fee9df\] {
+  background-color: var(--danger-bg) !important;
+}
+
+.text-\[\#8b3d0b\] {
+  color: var(--danger-fg) !important;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in srgb, var(--accent) 82%, var(--accent-2) 18%) color-mix(in srgb, var(--surface-elevated) 88%, transparent);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: color-mix(in srgb, var(--surface-elevated) 88%, transparent);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 88%, white 12%), color-mix(in srgb, var(--accent-2) 44%, var(--accent)));
+  border-radius: 2px;
+  border: 2px solid color-mix(in srgb, var(--surface-elevated) 88%, transparent);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 94%, white 6%), color-mix(in srgb, var(--accent-2) 52%, var(--accent)));
+}

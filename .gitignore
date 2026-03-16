@@ -1,0 +1,29 @@
+# Node / Next.js
+node_modules/
+.npm/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Next.js build artifacts
+client/.next/
+client/out/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Vercel
+.vercel/
+
+# TypeScript
+*.tsbuildinfo

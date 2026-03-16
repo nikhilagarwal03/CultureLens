@@ -1,0 +1,220 @@
+Project Documentation
+CultureLens (Working Name)
+Understanding Global Internet Culture Through Local Context
+________________________________________
+1. Project Overview
+The internet connects people globally, but cultural context remains local. Many users encounter memes, slang, traditions, or trends from other cultures that are difficult to understand.
+CultureLens is an AI-powered platform that explains cultural references, internet trends, memes, and social phenomena by:
+•	Identifying their origin
+•	Explaining their cultural significance
+•	Translating them into local cultural analogies
+•	Delivering the explanation in the user’s preferred language
+The platform bridges the gap between global internet culture and local cultural understanding.
+________________________________________
+2. Problem Statement
+The internet is global, but cultural understanding is fragmented.
+Users frequently encounter references they cannot fully understand, such as:
+•	international memes
+•	cultural traditions
+•	viral trends
+•	internet slang
+•	pop culture references
+Examples:
+•	Why is the Super Bowl such a big deal in the US?
+•	What does “senpai” mean in anime culture?
+•	Why is the Roman Empire meme trending?
+•	Why do Japanese fans line up overnight for anime merchandise?
+Traditional translation tools only translate language, but they do not translate culture.
+This leads to misunderstanding or loss of context.
+________________________________________
+3. Solution
+CultureLens provides AI-powered cultural interpretation.
+Given any input (word, phrase, question, or paragraph), the system:
+1.	Detects the core cultural reference
+2.	Identifies the origin culture
+3.	Explains its meaning and context
+4.	Generates a local cultural analogy
+5.	Localizes the explanation into the user’s language
+Example:
+Input:
+Why is the Super Bowl so popular?
+Output:
+Reference
+The Super Bowl is the championship game of the National Football League (NFL) in the United States.
+Cultural Impact
+It is one of the most watched television events in the world and a major cultural event in the US.
+Local Analogy (India)
+Its cultural importance is similar to the IPL final combined with a major festival-like event.
+________________________________________
+4. Key Features
+4.1 Cultural Reference Explanation
+Users can input:
+•	words
+•	questions
+•	paragraphs
+•	situations
+The system explains:
+•	origin
+•	context
+•	cultural impact
+________________________________________
+4.2 Cultural Analogy Engine
+The system explains concepts relative to the user’s country and cultural background.
+Example:
+Original Culture	Explanation for India
+Super Bowl	Similar to IPL Final
+Anime fandom	Similar to Bollywood fandom
+Thanksgiving	Similar to Diwali-style family gatherings
+________________________________________
+4.3 Internet Trend Understanding
+The system also explains:
+•	viral trends
+•	memes
+•	internet slang
+•	pop culture phenomena
+Example inputs:
+What is the NPC meme?
+Why are Roman Empire memes trending?
+What does "based" mean online?
+________________________________________
+4.4 Localization
+Using Lingo.dev, the system translates explanations into the user’s preferred language.
+Supported languages include:
+•	English
+•	Hindi
+•	Spanish
+•	Japanese
+•	French
+•	and many more.
+________________________________________
+4.5 Guest Mode
+Users can access the system without creating an account.
+Guest mode collects:
+•	user name
+•	country
+This information helps generate personalized cultural analogies.
+________________________________________
+4.6 Quick Search Prompts
+To help users explore the system, the interface provides quick search examples such as:
+Anime
+Super Bowl
+Prom Night
+Pepe Meme
+Roman Empire Meme
+________________________________________
+4.7 Shareable Cultural Cards
+Users can generate visual explanation cards that can be shared on social media.
+Example share card:
+Reference: Anime
+
+Cultural Analogy:
+Anime in Japan has cultural influence
+similar to Bollywood in India.
+
+culturelens.ai
+________________________________________
+5. User Flow
+Step 1 — Landing Page
+Users learn about the platform and its purpose.
+Main CTA:
+Try Now
+Sign In
+________________________________________
+Step 2 — Guest Onboarding
+User provides:
+Name
+Country
+Country selection may include:
+•	search-based selector
+•	globe visualization
+________________________________________
+Step 3 — Main Input Page
+Users enter a cultural reference.
+Examples:
+Anime
+Why is the Super Bowl important?
+What does "based" mean?
+________________________________________
+Step 4 — AI Processing
+The system:
+1.	detects reference
+2.	analyzes cultural context
+3.	generates explanation
+4.	creates local analogy
+5.	localizes language
+________________________________________
+Step 5 — Output Display
+Results appear in structured cards:
+•	Reference
+•	Cultural Impact
+•	Local Analogy
+•	Context / Trend
+________________________________________
+Step 6 — Sharing
+Users can:
+•	download a share card
+•	share on social media
+•	copy explanation link
+________________________________________
+6. System Architecture
+High-level pipeline:
+User Input
+   ↓
+Reference Detection
+   ↓
+Cultural Context Analysis
+   ↓
+Analogy Generation
+   ↓
+Localization (Lingo.dev)
+   ↓
+Structured Output
+________________________________________
+7. Technology Stack
+Frontend:
+•	Next.js
+•	Tailwind CSS
+•	Framer Motion
+Backend:
+•	Node.js
+•	Express
+AI Processing:
+•	LLM for cultural explanation
+•	Vision model (future feature) for meme recognition
+Localization:
+•	Lingo.dev SDK
+•	Lingo.dev CLI
+Database:
+•	MongoDB
+Deployment:
+•	Vercel
+________________________________________
+8. Lingo.dev Integration
+Lingo.dev is used for:
+Localization
+Translating explanations into the user’s preferred language.
+CLI
+Managing localization workflows.
+SDK
+Integrating localization into backend processing.
+Example workflow:
+AI generates explanation in English
+↓
+Lingo.dev SDK translates to target language
+↓
+Localized explanation returned to user
+________________________________________
+9. Future Enhancements
+Possible future features include:
+Meme Image Explanation
+Upload a meme image → detect origin and cultural context.
+Trending Internet Radar
+Detect trending cultural references.
+Cultural Feed
+Users see explanations shared by others.
+Social Features
+Users connect with friends and share discoveries.
+________________________________________
+10. Project Vision
+CultureLens aims to make the internet more understandable by bridging cultural gaps in global communication.
+Instead of only translating words, the platform translates cultural meaning, allowing users to understand global references through their own cultural lens.
