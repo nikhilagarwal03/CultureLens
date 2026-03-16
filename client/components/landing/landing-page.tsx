@@ -54,13 +54,16 @@ export function LandingPage() {
               >
                 Try now
               </Link>
-              {/* Reserved action button: intentionally no text and no redirect for future use. */}
-              <button
-                type="button"
-                aria-label="Reserved action"
-                title="Reserved action"
-                className="btn-secondary h-[46px] w-[46px]"
-              />
+              <a
+                href="https://github.com/nikhilagarwal03/CultureLens"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-secondary px-6 py-3 text-sm font-semibold flex items-center gap-2 justify-center"
+                aria-label="Star on GitHub"
+              >
+                <svg height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" className="inline-block mr-1"><path d="M8 12.027l-3.717 2.21.711-4.15-3.02-2.944 4.17-.606L8 2.5l1.856 3.937 4.17.606-3.02 2.944.711 4.15z"></path></svg>
+                Star on GitHub
+              </a>
             </div>
           </motion.div>
 
