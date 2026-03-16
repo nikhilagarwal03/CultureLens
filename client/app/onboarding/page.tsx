@@ -117,26 +117,26 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="relative h-[calc(100vh-72px)] overflow-hidden px-4 py-3 sm:px-6 sm:py-4">
+    <div className="relative min-h-screen overflow-hidden px-2 py-2 sm:px-6 sm:py-4">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_12%_15%,rgba(105,226,255,0.11),transparent_36%),radial-gradient(circle_at_88%_12%,rgba(114,184,255,0.11),transparent_34%)]" />
 
-      <main className="relative mx-auto h-full w-full max-w-6xl">
+      <main className="relative mx-auto w-full max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="shell-panel flex h-full w-full flex-col rounded-[22px] p-4 sm:p-5"
+          className="shell-panel flex w-full flex-col rounded-[22px] p-2 sm:p-5"
         >
           <div className="mb-3 border-b border-ink-soft/15 pb-3">
-            <h1 className="text-[2rem] font-semibold tracking-tight">Welcome to CultureLens</h1>
+            <h1 className="text-2xl sm:text-[2rem] font-semibold tracking-tight">Welcome to CultureLens</h1>
             <p className="mt-1.5 max-w-3xl text-sm leading-relaxed text-ink-soft/95">
               Tell us who you are and where you are from. Our AI automatically detects your language and adapts cultural analogies to hit home for you.
             </p>
           </div>
 
           <form onSubmit={onSubmit} className="flex min-h-0 flex-1 flex-col">
-            <div className="grid min-h-0 flex-1 gap-3 lg:grid-cols-12">
-              <section className="min-h-0 rounded-[16px] border border-ink-soft/18 bg-surface-elevated/45 p-4 lg:col-span-5">
+            <div className="flex flex-col gap-4 min-h-0 flex-1 lg:grid lg:grid-cols-12 lg:gap-3">
+              <section className="min-h-0 rounded-[16px] border border-ink-soft/18 bg-surface-elevated/45 p-4 mb-4 lg:mb-0 lg:col-span-5">
                 <div className="space-y-6">
                   <div>
                     <label htmlFor="name" className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.12em] text-ink-soft">
@@ -169,7 +169,7 @@ export default function OnboardingPage() {
                     svgHeightClassName="h-[132px] sm:h-[150px] lg:h-[136px] xl:h-[150px]"
                   />
 
-                  <div className="min-h-0">
+                  <div className="min-h-0 mt-4 lg:mt-0">
                     <label htmlFor="country" className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.12em] text-ink-soft">
                       Country
                     </label>

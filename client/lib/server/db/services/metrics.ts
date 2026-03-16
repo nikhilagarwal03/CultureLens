@@ -1,7 +1,10 @@
+
 import { Metrics } from "../models/metrics";
+import { connectToDatabase } from "../mongoose";
 
 
 export async function incrementVisits() {
+  await connectToDatabase();
   await Metrics.findOneAndUpdate(
     {},
     { $inc: { visits: 1 } },
@@ -11,6 +14,7 @@ export async function incrementVisits() {
 
 
 export async function incrementSearches() {
+  await connectToDatabase();
   await Metrics.findOneAndUpdate(
     {},
     { $inc: { searches: 1 } },
@@ -19,6 +23,7 @@ export async function incrementSearches() {
 }
 
 export async function getMetrics() {
+  await connectToDatabase();
   const doc = await Metrics.findOne({});
   return {
     visits: doc?.visits || 0,
