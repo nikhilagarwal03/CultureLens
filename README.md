@@ -76,6 +76,23 @@ This makes global internet culture **understandable for everyone**.
 
 ---
 
+# 🎬 Demo Video
+
+<p align="center">
+  <a href="https://youtu.be/2RJXygec9Sc?si=88Wml-mE_kvzpH8y">
+    <img src="https://youtu.be/2RJXygec9Sc?si=88Wml-mE_kvzpH8y" 
+         alt="CultureLens Demo Video" 
+         width="600" 
+         style="border-radius: 12px; box-shadow: 0 2px 12px #0002;" />
+  </a>
+</p>
+
+<p align="center">
+  ▶️ Click to watch the demo video
+</p>
+
+---
+
 # 🚀 Live Demo
 
 Try CultureLens here:
