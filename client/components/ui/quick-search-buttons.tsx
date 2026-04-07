@@ -8,9 +8,9 @@ type Props = {
 export function QuickSearchButtons({ prompts, onSelect }: Props) {
   return (
     <div className="flex flex-wrap gap-2">
-      {prompts.map((prompt) => (
+      {prompts.map((prompt, i) => (
         <button
-          key={prompt}
+          key={`${prompt}-${i}`}
           type="button"
           onClick={() => onSelect(prompt)}
           className="tag-chip px-3 py-1.5 text-sm"

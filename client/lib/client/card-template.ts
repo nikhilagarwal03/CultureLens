@@ -12,13 +12,22 @@ export type ShareCardTemplate = {
 
 export const DEFAULT_SHARE_CARD_TEMPLATE: ShareCardTemplate = {
   width: 1400,
-  height: 950,
-  // Match site panel gradient (example: soft blue/gray)
-  backgroundStart: "#f7fafc", // panel background (light)
-  backgroundEnd: "#e5e7eb",   // panel background (slightly darker)
-  textPrimary: "#181f2a",     // ink (site text)
-  textMuted: "#6b7280",       // ink-soft (site muted)
-  accent: "#2dd4bf",          // accent (site accent)
+  height: 980,
+  // Match website dark blue palette
+  backgroundStart: "#000a14",
+  backgroundEnd: "#0b1b2c",
+  textPrimary: "#eff6ff",
+  textMuted: "#8ea8c3",
+  accent: "#69e2ff",
+};
+
+// Section icons for improved presentation
+export const SECTION_ICONS: Record<string, string> = {
+  Reference: "📖",
+  "Origin Culture": "🌏",
+  "Cultural Impact": "💥",
+  "Local Analogy": "🔄",
+  Context: "💬",
 };
 
 export type ShareCardData = {
