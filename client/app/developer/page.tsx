@@ -20,7 +20,6 @@ export default function DeveloperPage() {
             &#128187;
           </span>
           <div>
-            <p className="text-xs tracking-[0.16em] text-ink-soft uppercase">Developer</p>
             <h1 className="text-4xl font-extrabold tracking-tight text-foreground drop-shadow">Developer Space</h1>
           </div>
         </div>
@@ -39,6 +38,24 @@ export default function DeveloperPage() {
             </div>
           </div>
         )}
+        {/* Medium Blog Post Section */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-bold mb-2 text-foreground flex items-center gap-2">
+            <svg height="22" viewBox="0 0 24 24" fill="currentColor" className="inline-block text-accent"><path d="M2 4.5A2.5 2.5 0 0 1 4.5 2h15A2.5 2.5 0 0 1 22 4.5v15A2.5 2.5 0 0 1 19.5 22h-15A2.5 2.5 0 0 1 2 19.5v-15ZM7.5 7A1.5 1.5 0 1 0 7.5 10A1.5 1.5 0 0 0 7.5 7ZM6 12c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2v4c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2v-4Zm2 0v4h8v-4H8Zm7.5-5A1.5 1.5 0 1 0 16.5 10A1.5 1.5 0 0 0 15.5 7Z"/></svg>
+            Medium Blog Post
+          </h2>
+          <p className="mb-3 text-ink-soft">Read the story behind CultureLens, including the vision, technical journey, and cultural impact:</p>
+          <div className="flex-1 min-w-[180px] max-w-[700px] rounded-2xl bg-surface-elevated p-6 shadow-lg text-accent border border-panel">
+          <a
+            href="https://medium.com/@agarwalnikhil909/the-internet-is-global-but-culture-isnt-building-culturelens-016daef78f68"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="uppercase tracking-widest opacity-80 text hover:text-foreground transition font-medium"
+            >
+            The Internet is Global, but Culture Isn’t: Building CultureLens
+          </a>
+          </div>
+        </div>
         {/* Author details and GitHub link */}
         <div className="mt-16 flex flex-col items-center gap-4">
           <div className="flex flex-col items-center gap-2">
@@ -82,7 +99,7 @@ export default function DeveloperPage() {
             {/* Email */}
             <a
               href="mailto:agarwalnikhil909@gmail.com"
-              className="inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-gradient-to-r from-pink-500 to-yellow-500 text-white hover:from-pink-600 hover:to-yellow-600 transition text-sm font-medium shadow"
+              className="inline-flex items-center gap-1 px-3 py-2 rounded-lg bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-600 transition text-sm font-medium shadow"
               title="Email"
             >
               <svg height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="inline-block">
@@ -104,7 +121,7 @@ export default function DeveloperPage() {
           </a>
         </div>
         <div className="mt-12 text-center text-xs text-ink-soft/70">
-          <span className="inline-block px-3 py-1 rounded-full bg-surface-muted/60 backdrop-blur">Made with 💡 by CultureLens</span>
+          <span className="inline-block px-3 py-1 rounded-full bg-surface-muted/60 backdrop-blur">Made with 💙 in INDIA</span>
         </div>
       </section>
     </main>

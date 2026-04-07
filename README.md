@@ -19,6 +19,9 @@
   <a href="#features"><b>✨ Features</b></a> •
   <a href="#tech-stack"><b>🛠 Tech Stack</b></a>
 </p>
+<p align="center">
+  <a href="https://medium.com/@agarwalnikhil909/the-internet-is-global-but-culture-isnt-building-culturelens-016daef78f68"><b>📝 Medium Blog Post</b></a>
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Next.js-16-black?style=for-the-badge" />
@@ -349,6 +352,16 @@ Future improvements planned for CultureLens:
 
 ---
 
+# 📝 Read More: Medium Blog Post
+
+For a deep dive into the vision, technical journey, and cultural impact behind CultureLens, check out the detailed Medium article:
+
+👉 [The Internet is Global, but Culture Isn’t: Building CultureLens](https://medium.com/@agarwalnikhil909/the-internet-is-global-but-culture-isnt-building-culturelens-016daef78f68)
+
+This post covers the inspiration, challenges, and unique solutions that shaped CultureLens.
+
+---
+
 # 👨‍💻 Author
 
 **Nikhil Agarwal**
@@ -371,4 +384,3 @@ If you want to improve CultureLens:
 Please follow the project's **Code of Conduct**.
 
 ---
-
