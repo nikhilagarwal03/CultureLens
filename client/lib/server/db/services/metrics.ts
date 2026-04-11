@@ -1,5 +1,6 @@
 
 import { Metrics } from "../models/metrics";
+import { VisitDedupe } from "../models/visit-dedupe";
 import { connectToDatabase } from "../mongoose";
 
 
@@ -10,6 +11,28 @@ export async function incrementVisits() {
     { $inc: { visits: 1 } },
     { upsert: true, returnDocument: "after" }
   );
+}
+
+export async function shouldCountVisitByKey(
+  dedupeKey: string,
+  ttlSeconds: number
+): Promise<boolean> {
+  await connectToDatabase();
+
+  const expiresAt = new Date(Date.now() + ttlSeconds * 1000);
+  const result = await VisitDedupe.updateOne(
+    { key: dedupeKey },
+    {
+      $setOnInsert: {
+        key: dedupeKey,
+        createdAt: new Date(),
+        expiresAt,
+      },
+    },
+    { upsert: true }
+  );
+
+  return result.upsertedCount === 1;
 }
 
 
