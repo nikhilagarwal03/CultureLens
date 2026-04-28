@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 export function Footer() {
   const pathname = usePathname();
-  const [metrics, setMetrics] = useState<{ visits: number; searches: number } | null>(null);
+  const [metrics, setMetrics] = useState<{ searches: number } | null>(null);
 
   useEffect(() => {
     fetch("/api/metrics")
@@ -35,7 +35,7 @@ export function Footer() {
           <div className="flex w-full flex-wrap items-center gap-3 justify-end">
             {metrics && (
               <div className="rounded-lg bg-black/5 px-3 py-1 text-xs text-ink-soft/80 font-medium w-fit order-1 md:order-none">
-                Visits: {metrics.visits.toLocaleString()} &nbsp;|&nbsp; Searches: {metrics.searches.toLocaleString()}
+                Searches: {metrics.searches.toLocaleString()}
               </div>
             )}
             <nav className="flex flex-wrap items-center gap-3 order-2" aria-label="Footer navigation">

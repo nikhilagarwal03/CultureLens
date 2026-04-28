@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 export default function DeveloperPage() {
-  const [metrics, setMetrics] = useState<{ visits: number; searches: number } | null>(null);
+  const [metrics, setMetrics] = useState<{ searches: number } | null>(null);
 
   useEffect(() => {
     fetch("/api/metrics")
@@ -29,15 +29,11 @@ export default function DeveloperPage() {
         {metrics && (
           <div className="flex flex-wrap gap-6 mt-8">
             <div className="flex-1 min-w-[180px] max-w-[260px] rounded-2xl bg-surface-elevated p-6 shadow-lg text-accent border border-panel">
-              <div className="text-3xl font-bold mb-1 text-foreground">{metrics.visits.toLocaleString()}</div>
-              <div className="text-xs uppercase tracking-widest opacity-80 text-ink-soft">Visits</div>
-            </div>
-            <div className="flex-1 min-w-[180px] max-w-[260px] rounded-2xl bg-surface-elevated p-6 shadow-lg text-accent border border-panel">
               <div className="text-3xl font-bold mb-1 text-foreground">{metrics.searches.toLocaleString()}</div>
               <div className="text-xs uppercase tracking-widest opacity-80 text-ink-soft">Searches</div>
             </div>
           </div>
-        )}
+        )}}
         {/* Medium Blog Post Section */}
         <div className="mt-16">
           <h2 className="text-2xl font-bold mb-2 text-foreground flex items-center gap-2">
