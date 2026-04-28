@@ -33,7 +33,7 @@ export default function DeveloperPage() {
               <div className="text-xs uppercase tracking-widest opacity-80 text-ink-soft">Searches</div>
             </div>
           </div>
-        )}}
+        )}
         {/* Medium Blog Post Section */}
         <div className="mt-16">
           <h2 className="text-2xl font-bold mb-2 text-foreground flex items-center gap-2">
