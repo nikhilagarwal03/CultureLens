@@ -26,7 +26,7 @@ const examples = ["Skibidi", "Met Gala", "Hanami", "Coachella", "Bundesliga meme
 export function LandingPage() {
   return (
     <div className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_10%,rgba(217,107,43,0.2),transparent_35%),radial-gradient(circle_at_82%_16%,rgba(98,172,255,0.2),transparent_38%),radial-gradient(circle_at_65%_84%,rgba(24,20,16,0.12),transparent_36%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(8,20,34,0.72)_0%,rgba(0,10,20,0.28)_42%,rgba(0,10,20,0.92)_100%),radial-gradient(circle_at_50%_-10%,rgba(122,231,255,0.14),transparent_34%),radial-gradient(circle_at_18%_18%,rgba(217,107,43,0.1),transparent_28%)] md:bg-[radial-gradient(circle_at_16%_10%,rgba(217,107,43,0.2),transparent_35%),radial-gradient(circle_at_82%_16%,rgba(98,172,255,0.2),transparent_38%),radial-gradient(circle_at_65%_84%,rgba(24,20,16,0.12),transparent_36%)]" />
 
       <main className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 pb-16 pt-12 md:px-10 md:pt-16">
         <div className="flex items-center gap-3 mb-8">
