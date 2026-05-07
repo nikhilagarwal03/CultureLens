@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useAppState } from "@/components/providers/app-provider";
+import { isDashboardRouteActive, resolveDashboardHref } from "@/lib/client/navigation";
 
 export function Navbar() {
   const pathname = usePathname();
   const { user, onboardingComplete } = useAppState();
+  const dashboardHref = resolveDashboardHref(Boolean(user));
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-black/8 bg-[color-mix(in_srgb,var(--panel)_86%,transparent)] backdrop-blur-xl">
@@ -26,7 +28,7 @@ export function Navbar() {
           <NavLink href="/" current={pathname === "/"}>Home</NavLink>
           
           {/* Dashboard and Profile are now always accessible once onboarding is finished */}
-          <NavLink href="/app" current={pathname.startsWith("/app")}>Dashboard</NavLink>
+          <NavLink href={dashboardHref} current={isDashboardRouteActive(pathname, dashboardHref)}>Dashboard</NavLink>
           <NavLink href="/profile" current={pathname === "/profile"}>Profile</NavLink>
           
           <NavLink href="/developer" current={pathname === "/developer"}>Developer</NavLink>

@@ -3,10 +3,14 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useAppState } from "@/components/providers/app-provider";
+import { isDashboardRouteActive, resolveDashboardHref } from "@/lib/client/navigation";
 
 export function Footer() {
   const pathname = usePathname();
+  const { user } = useAppState();
   const [metrics, setMetrics] = useState<{ searches: number } | null>(null);
+  const dashboardHref = resolveDashboardHref(Boolean(user));
 
   useEffect(() => {
     fetch("/api/metrics")
@@ -42,7 +46,7 @@ export function Footer() {
               <Link href="/" className={`btn-ghost px-3 py-2 text-sm ${pathname === "/" ? "opacity-100" : "opacity-80"}`}>
                 Home
               </Link>
-              <Link href="/app" className={`btn-ghost px-3 py-2 text-sm ${pathname === "/app" ? "opacity-100" : "opacity-80"}`}>
+              <Link href={dashboardHref} className={`btn-ghost px-3 py-2 text-sm ${isDashboardRouteActive(pathname, dashboardHref) ? "opacity-100" : "opacity-80"}`}>
                 Dashboard
               </Link>
               <Link href="/profile" className={`btn-ghost px-3 py-2 text-sm ${pathname === "/profile" ? "opacity-100" : "opacity-80"}`}>
