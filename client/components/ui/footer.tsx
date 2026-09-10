@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useAppState } from "@/components/providers/app-provider";
 import { isDashboardRouteActive, resolveDashboardHref } from "@/lib/client/navigation";
+import VisitorCounter from "@/components/ui/visitor-counter";
 
 export function Footer() {
   const pathname = usePathname();
@@ -42,6 +43,7 @@ export function Footer() {
                 Searches: {metrics.searches.toLocaleString()}
               </div>
             )}
+            <VisitorCounter />
             <nav className="flex flex-wrap items-center gap-3 order-2" aria-label="Footer navigation">
               <Link href="/" className={`btn-ghost px-3 py-2 text-sm ${pathname === "/" ? "opacity-100" : "opacity-80"}`}>
                 Home

@@ -9,10 +9,7 @@ const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
   If the first fails (rate limit / outage), the next one is used.
 */
 const MODELS = [
-"google/gemini-2.0-flash-lite-001", // Currently the most stable Flash Lite ID
-  "google/gemini-2.0-pro-exp-02-05:free", // High quality free experimental
-  "deepseek/deepseek-r1:free", // Very popular reasoning model
-  "mistralai/mistral-7b-instruct-v0.1:free", // Legacy but usually has high uptime
+"nex-agi/nex-n2.5-mini:free"
 ];
 
 function getOpenRouterApiKey(): string | null {
