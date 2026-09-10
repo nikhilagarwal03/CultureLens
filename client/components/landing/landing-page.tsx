@@ -5,21 +5,24 @@ import { motion } from "framer-motion";
 import { useAppState } from "@/components/providers/app-provider";
 import { resolveDashboardHref } from "@/lib/client/navigation";
 
-const featureCards = [
+const PILLARS = [
   {
-    icon: "🌍",
-    title: "Global Trends, Local Lens",
-    body: "See global memes, slang, and moments explained with analogies and context tailored to your country. No more generic summaries—get answers that actually make sense for you.",
+    num: "01",
+    tag: "ETYMOLOGY",
+    title: "Genealogy & Source",
+    body: "Pinpoint where the expression emerged, tracing its root path through digital subcultures.",
   },
   {
-    icon: "⚡",
-    title: "Instant Context, Zero Confusion",
-    body: "Decode viral references, fandom slang, and trending phrases in seconds. Stay in the loop and keep up with conversations, not just catch up.",
+    num: "02",
+    tag: "TRANSLATION",
+    title: "Cultural Counterparts",
+    body: "Re-frame foreign vernacular through analogies, idioms, and social parallels native to your region.",
   },
   {
-    icon: "🎯",
-    title: "One Card, All You Need",
-    body: "Origin, meaning, cultural impact, and a local analogy—all in a single, beautifully designed card. Share, save, or just get clarity fast.",
+    num: "03",
+    tag: "SYNTHESIS",
+    title: "Calibrated Cards",
+    body: "Structured data models providing nuance, subtext, and usage etiquette in a single visual pass.",
   },
 ];
 
@@ -95,26 +98,25 @@ export function LandingPage() {
           </motion.aside>
         </section>
 
-        <section className="mt-16 grid gap-4 md:grid-cols-3">
-          {featureCards.map((card, idx) => (
-            <motion.article
-              key={card.title}
-              initial={{ opacity: 0, y: 16 }}
+        {/* Feature Grid: 1 col on mobile, 3 cols on tablet/desktop */}
+        <section className="mt-14 grid grid-cols-1 gap-3 border-t border-[#14263b]/70 pt-8 sm:mt-16 sm:gap-4 md:mt-20 md:grid-cols-3">
+          {PILLARS.map((p, i) => (
+            <motion.div
+              key={p.num}
+              initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: 0.15 + idx * 0.08 }}
-              className="rounded-2xl bg-panel p-6 ring-1 ring-black/10 flex flex-col items-start shadow-lg"
+              transition={{ duration: 0.3, delay: 0.06 * i }}
+              className="rounded-xl border border-[#14293f] bg-[#071320]/50 p-4 sm:p-5 transition hover:border-[#22476d]"
             >
-              <div className="mb-4 flex items-center gap-3">
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-surface-elevated text-2xl text-accent shadow">
-                  {card.icon}
-                </span>
-                <div className="h-2 w-12 rounded-[2px] bg-[linear-gradient(90deg,var(--accent),var(--accent-2))]" />
+              <div className="flex items-center justify-between font-mono text-[15px] text-[#577b9d]">
+                <span className="font-bold text-[#38bdf8]">{p.tag}</span>
+                <span>{p.num}</span>
               </div>
-              <h2 className="text-lg font-semibold tracking-tight text-foreground mb-1">{card.title}</h2>
-              <p className="text-sm leading-6 text-ink-soft">{card.body}</p>
-            </motion.article>
+              <h2 className="mt-2 text-md font-semibold text-white">{p.title}</h2>
+              <p className="mt-1 text-sm leading-relaxed text-[#7e9bb9]">{p.body}</p>
+            </motion.div>
           ))}
-        </section>
+          </section>
       </main>
     </div>
   );

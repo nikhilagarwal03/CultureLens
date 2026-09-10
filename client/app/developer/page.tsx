@@ -20,7 +20,7 @@ export default function DeveloperPage() {
   }, []);
 
   return (
-    <main className="mx-auto w-full max-w-7xl px-5 py-8 sm:px-8 sm:py-12">
+    <main className="mx-auto w-full max-w-6xl px-5 py-8 sm:px-2 sm:py-12">
       <section className="grid auto-rows-[minmax(170px,auto)] grid-cols-1 gap-4 md:grid-cols-4">
         <div className="shell-panel relative overflow-hidden rounded-[24px] p-7 md:col-span-3 md:row-span-2 md:p-10">
           <div className="absolute -right-12 -top-16 h-48 w-48 rounded-full border border-accent/20 bg-accent/10 blur-2xl" />
@@ -29,10 +29,10 @@ export default function DeveloperPage() {
               <div className="mb-7 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
                 <Code2 className="size-4" /> CultureLens / developer
               </div>
-              <h1 className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-tight text-foreground sm:text-6xl">
+              <h1 className="max-w-3xl text-4xl font-semibold leading-[0.98] tracking-tight text-foreground sm:text-4xl">
                 Build a clearer internet.
               </h1>
-              <p className="mt-6 max-w-2xl text-base leading-7 text-ink-soft sm:text-lg">
+              <p className="mt-6 max-w-2xl text-base leading-7 text-ink-soft sm:text-md">
                 A look behind the tools that turn global references into context people can actually use.
               </p>
             </div>
@@ -46,7 +46,7 @@ export default function DeveloperPage() {
         </div>
 
         <div className="relative overflow-hidden rounded-[24px] bg-accent p-7 text-[#03121d] md:col-span-1 md:row-span-2">
-          <BarChart3 className="size-7" />
+          {/* <BarChart3 className="size-7" /> */}
           <div className="absolute inset-x-7 bottom-7">
             <div className="text-5xl font-semibold tracking-tight">
               {metrics ? metrics.searches.toLocaleString() : "—"}
@@ -90,7 +90,7 @@ export default function DeveloperPage() {
         <div className="shell-panel rounded-[24px] p-7 md:col-span-2">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="flex items-center gap-4">
-              <img src="https://avatars.githubusercontent.com/u/5633906?v=4" alt="Nikhil Agarwal" className="size-16 rounded-2xl border border-white/15 object-cover" />
+              <img src="/image.png" alt="Nikhil Agarwal" className="size-16 rounded-2xl border border-white/15 object-cover" />
               <div>
                 <h2 className="text-xl font-semibold text-foreground">Nikhil Agarwal</h2>
                 <p className="mt-1 text-sm text-ink-soft">Creator &amp; maintainer</p>
