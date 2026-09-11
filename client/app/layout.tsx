@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, Space_Grotesk } from "next/font/google";
-import "./globals.css";
+// import "./globals.css";
 import { AppProvider } from "@/components/providers/app-provider";
 import { Navbar } from "@/components/navbar/navbar";
 import { ToastProvider } from "@/components/ui/toast";
@@ -19,6 +19,9 @@ const bodyFont = Space_Grotesk({
 export const metadata: Metadata = {
   title: "CultureLens",
   description: "Decode cultural references with local context.",
+  verification: {
+    google: "WtSB11jC-xNMWvpJ0Sokz434ykqgozA7pQQ784VzlY0",
+  },
   icons: {
     icon: "/logo_2.png",
     shortcut: "/logo_2.png",
