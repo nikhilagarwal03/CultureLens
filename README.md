@@ -29,6 +29,7 @@ CultureLens explains memes, slang, and traditions from any culture using analogi
 - [Features](#features)
 - [Engineering Highlights](#engineering-highlights)
 - [Tech Stack](#tech-stack)
+- [Architecture](#architecture)
 - [Project Structure](#project-structure)
 - [Getting Started](#getting-started)
 - [Testing & Quality](#testing--quality)
@@ -122,6 +123,22 @@ CultureLens is a single full-stack **Next.js 16** application (App Router) — t
 | Performance | Lighthouse CI, autocannon |
 | CI/CD | GitHub Actions, Vercel |
 
+## Architecture
+
+```mermaid
+flowchart LR
+    U[Browser] -->|HTTP| A[Next.js App Router]
+    A --> API[API Routes /app/api]
+    API --> V[Validation & Error Layer]
+    V --> AI[AI Pipeline<br/>reference & trend detection]
+    AI --> OR[(OpenRouter LLM)]
+    V --> C{Cache hit?}
+    C -->|yes| R[Upstash Redis]
+    C -->|no| OR
+    OR --> L[Lingo.dev Localization]
+    L --> DB[(MongoDB via Mongoose)]
+    L --> A
+```
 
 ## Project Structure
 
@@ -225,3 +242,4 @@ Deploys to **Vercel**:
 Built by **[Nikhil Agarwal](https://github.com/nikhilagarwal03)** · [Read the full write-up →](https://medium.com/@agarwalnikhil909/the-internet-is-global-but-culture-isnt-building-culturelens-016daef78f68)
 
 </div>
+
