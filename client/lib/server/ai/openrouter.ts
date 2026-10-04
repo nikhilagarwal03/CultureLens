@@ -9,7 +9,7 @@ const OPENROUTER_API_URL = "https://openrouter.ai/api/v1/chat/completions";
   If the first fails (rate limit / outage), the next one is used.
 */
 const MODELS = [
-"nex-agi/nex-n2.5-mini:free"
+"openrouter/free"
 ];
 
 function getOpenRouterApiKey(): string | null {
